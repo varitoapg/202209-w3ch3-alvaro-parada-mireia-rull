@@ -30,13 +30,15 @@ sectionSeries.render();
 const seriesPending = new SeriesList(
   sectionSeries.domElement,
   "Pending Series",
-  "You have 4 series pending to watch"
+  "You have 4 series pending to watch",
+  "series-pending"
 );
 seriesPending.render();
 
 const seriesWatched = new SeriesList(
   sectionSeries.domElement,
   "Watched series",
-  "You have watched 4 series"
+  "You have watched 4 series",
+  "series-watched"
 );
 seriesWatched.render();
