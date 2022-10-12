@@ -20,3 +20,5 @@ class Show extends Component implements ShowStructure {
     this.watched = true;
   }
 }
+
+export default Show;
