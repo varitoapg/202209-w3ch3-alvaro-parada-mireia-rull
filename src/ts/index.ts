@@ -1,6 +1,7 @@
 import Component from "./components/Component.js";
 import Header from "./components/Header/Header.js";
 import MainSeries from "./components/MainSeries/MainSeries.js";
+import SeriesList from "./components/SeriesList/SeriesList.js";
 
 const rootElement = document.querySelector(".root");
 
@@ -25,3 +26,19 @@ const sectionSeries = new MainSeries(
   "section"
 );
 sectionSeries.render();
+
+const seriesPending = new SeriesList(
+  sectionSeries.domElement,
+  "Pending Series",
+  "You have 4 series pending to watch",
+  "series-pending"
+);
+seriesPending.render();
+
+const seriesWatched = new SeriesList(
+  sectionSeries.domElement,
+  "Watched series",
+  "You have watched 4 series",
+  "series-watched"
+);
+seriesWatched.render();
