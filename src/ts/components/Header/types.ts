@@ -1,0 +1,3 @@
+interface HeaderStructure {
+  mainTitle: string;
+}
