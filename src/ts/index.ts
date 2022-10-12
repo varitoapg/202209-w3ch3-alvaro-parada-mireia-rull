@@ -14,3 +14,14 @@ const header = new Header(
   "header"
 );
 header.render();
+
+const main = new Component(container.domElement, "main", "main");
+main.render();
+
+const sectionSeries = new MainSeries(
+  main.domElement,
+  "Series List",
+  "series",
+  "section"
+);
+sectionSeries.render();
