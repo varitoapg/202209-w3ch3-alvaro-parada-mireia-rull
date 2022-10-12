@@ -8,7 +8,7 @@ class SeriesList extends Component implements SeriesList {
     className = "",
     tag = "div"
   ) {
-    super(parentElement, className, tag);
+    super(parentElement, className, "section");
     this.subsectionTitle = subsectionTitle;
     this.information = information;
   }
