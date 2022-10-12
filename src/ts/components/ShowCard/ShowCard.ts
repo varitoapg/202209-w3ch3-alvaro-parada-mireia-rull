@@ -1,6 +1,6 @@
 import Component from "../Component.js";
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import Show from "../Show/show.js";
+import Show from "../Show/Show.js";
 
 class ShowCard extends Component {
   constructor(parentElement: HTMLElement, public show: Show) {
