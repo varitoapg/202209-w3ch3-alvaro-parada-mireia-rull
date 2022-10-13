@@ -7,7 +7,8 @@
     "build-js": "tsc",
     "build-js:dev": "npm run build-js -- -w",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
