@@ -37,6 +37,13 @@ const seriesPending = new SeriesList(
 );
 seriesPending.render();
 
+const pendingSeriesList = new Component(
+  seriesPending.domElement,
+  "series-list",
+  "ul"
+);
+pendingSeriesList.render();
+
 const seriesWatched = new SeriesList(
   sectionSeries.domElement,
   "Watched series",
@@ -45,6 +52,17 @@ const seriesWatched = new SeriesList(
 );
 seriesWatched.render();
 
+const watchedSeriesList = new Component(
+  seriesWatched.domElement,
+  "series-list",
+  "ul"
+);
+watchedSeriesList.render();
+
 shows.forEach((show) => {
-  new ShowCard(seriesPending.domElement, show).render();
+  if (show.watched) {
+    new ShowCard(watchedSeriesList.domElement, show).render();
+  } else {
+    new ShowCard(pendingSeriesList.domElement, show).render();
+  }
 });
