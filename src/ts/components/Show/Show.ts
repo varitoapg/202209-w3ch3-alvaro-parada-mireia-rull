@@ -1,5 +1,5 @@
 import Component from "../Component.js";
-import type ShowStructure from "./types.js";
+import ShowStructure from "./types.js";
 
 class Show extends Component implements ShowStructure {
   constructor(
