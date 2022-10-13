@@ -1,4 +1,4 @@
-import TvShowStructure from "./types.js";
+import type TvShowStructure from "./types.js";
 
 const shows: TvShowStructure[] = [
   {

@@ -2,7 +2,7 @@ import Component from "./components/Component.js";
 import Header from "./components/Header/Header.js";
 import MainSeries from "./components/MainSeries/MainSeries.js";
 import SeriesList from "./components/SeriesList/SeriesList.js";
-import Show from "./components/Show/Show.js";
+import type Show from "./components/Show/Show.js";
 import ShowCard from "./components/ShowCard/ShowCard.js";
 import shows from "./shows/shows.js";
 
@@ -30,10 +30,22 @@ const sectionSeries = new MainSeries(
 );
 sectionSeries.render();
 
+const showsCount = shows.length;
+const watchedShowsCount = shows.filter((show) => show.watched).length;
+
+let showCountInformationPending;
+if (showsCount === watchedShowsCount) {
+  showCountInformationPending = "Congrats! You've watched all your series";
+} else {
+  showCountInformationPending = `You have ${
+    showsCount - watchedShowsCount
+  } series pending to watch`;
+}
+
 const seriesPending = new SeriesList(
   sectionSeries.domElement,
   "Pending Series",
-  "You have 4 series pending to watch",
+  showCountInformationPending,
   "series-pending"
 );
 seriesPending.render();
@@ -45,10 +57,17 @@ const pendingSeriesList = new Component(
 );
 pendingSeriesList.render();
 
+let showCountInformationWatched;
+if (watchedShowsCount === 0) {
+  showCountInformationWatched = "You have not watched any series yet";
+} else {
+  showCountInformationWatched = `You have watched ${watchedShowsCount} series`;
+}
+
 const seriesWatched = new SeriesList(
   sectionSeries.domElement,
   "Watched series",
-  "You have watched 4 series",
+  showCountInformationWatched,
   "series-watched"
 );
 seriesWatched.render();
@@ -62,8 +81,12 @@ watchedSeriesList.render();
 
 shows.forEach((show: Show) => {
   if (show.watched) {
-    new ShowCard(watchedSeriesList.domElement, show).render();
+    const newShow = new ShowCard(watchedSeriesList.domElement, show);
+    newShow.render();
+    // NewShow.delete();
   } else {
-    new ShowCard(pendingSeriesList.domElement, show).render();
+    const newShow = new ShowCard(pendingSeriesList.domElement, show);
+    newShow.render();
+    // NewShow.delete();
   }
 });
