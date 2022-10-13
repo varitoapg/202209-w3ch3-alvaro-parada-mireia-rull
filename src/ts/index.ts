@@ -2,6 +2,8 @@ import Component from "./components/Component.js";
 import Header from "./components/Header/Header.js";
 import MainSeries from "./components/MainSeries/MainSeries.js";
 import SeriesList from "./components/SeriesList/SeriesList.js";
+import ShowCard from "./components/ShowCard/ShowCard.js";
+import shows from "./shows/shows.js";
 
 const rootElement = document.querySelector(".root");
 
@@ -35,6 +37,13 @@ const seriesPending = new SeriesList(
 );
 seriesPending.render();
 
+const pendingSeriesList = new Component(
+  seriesPending.domElement,
+  "series-list",
+  "ul"
+);
+pendingSeriesList.render();
+
 const seriesWatched = new SeriesList(
   sectionSeries.domElement,
   "Watched series",
@@ -42,3 +51,18 @@ const seriesWatched = new SeriesList(
   "series-watched"
 );
 seriesWatched.render();
+
+const watchedSeriesList = new Component(
+  seriesWatched.domElement,
+  "series-list",
+  "ul"
+);
+watchedSeriesList.render();
+
+shows.forEach((show) => {
+  if (show.watched) {
+    new ShowCard(watchedSeriesList.domElement, show).render();
+  } else {
+    new ShowCard(pendingSeriesList.domElement, show).render();
+  }
+});
