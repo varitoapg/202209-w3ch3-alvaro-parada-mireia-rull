@@ -83,10 +83,8 @@ shows.forEach((show: Show) => {
   if (show.watched) {
     const newShow = new ShowCard(watchedSeriesList.domElement, show);
     newShow.render();
-    // NewShow.delete();
   } else {
     const newShow = new ShowCard(pendingSeriesList.domElement, show);
     newShow.render();
-    // NewShow.delete();
   }
 });
