@@ -35,6 +35,5 @@ module.exports = {
         caughtErrorsIgnorePattern: /^_$/.source,
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": ["interface"],
   },
 };
