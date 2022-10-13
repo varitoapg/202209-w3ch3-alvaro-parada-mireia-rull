@@ -1,6 +1,7 @@
-import type TvShow from "./types.js";
+/* eslint-disable @typescript-eslint/consistent-type-imports */
+import TvShow from "./types.js";
 
-const series: TvShow[] = [
+const shows: TvShow[] = [
   {
     id: 1,
     name: "The Sopranos",
@@ -55,4 +56,4 @@ const series: TvShow[] = [
   },
 ];
 
-export default series;
+export default shows;

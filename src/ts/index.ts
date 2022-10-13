@@ -2,6 +2,8 @@ import Component from "./components/Component.js";
 import Header from "./components/Header/Header.js";
 import MainSeries from "./components/MainSeries/MainSeries.js";
 import SeriesList from "./components/SeriesList/SeriesList.js";
+import ShowCard from "./components/ShowCard/ShowCard.js";
+import shows from "./shows/shows.js";
 
 const rootElement = document.querySelector(".root");
 
@@ -42,3 +44,7 @@ const seriesWatched = new SeriesList(
   "series-watched"
 );
 seriesWatched.render();
+
+shows.forEach((show) => {
+  new ShowCard(seriesPending.domElement, show).render();
+});

@@ -1,9 +1,10 @@
+import type TvShow from "../../shows/types.js";
 import Component from "../Component.js";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+
 import Show from "../Show/Show.js";
 
 class ShowCard extends Component {
-  constructor(parentElement: HTMLElement, public show: Show) {
+  constructor(parentElement: HTMLElement, public show: TvShow) {
     super(parentElement, "serie", "li");
   }
 
@@ -12,8 +13,8 @@ class ShowCard extends Component {
     this.domElement.innerHTML = `<img class="serie__poster"
                 src="${this.show.poster}"
                 alt="${this.show.name} poster" />
-              <h4 class="serie__title">The Sopranos</h4>
-              <p class="serie__info">David Chase (1999)</p>
+              <h4 class="serie__title">${this.show.name}</h4>
+              <p class="serie__info">${this.show.creator} (${this.show.year})</p>
               <ul class="score">
                 <li class="score__star">
                   <i class="icon--score fas fa-star" title="1/5"></i>
