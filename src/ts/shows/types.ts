@@ -1,4 +1,4 @@
-interface TvShow {
+interface TvShowStructure {
   id: number;
   name: string;
   creator: string;
@@ -9,4 +9,4 @@ interface TvShow {
   emmies: number;
 }
 
-export default TvShow;
+export default TvShowStructure;

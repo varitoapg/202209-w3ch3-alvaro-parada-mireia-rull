@@ -1,4 +1,4 @@
-import type TvShow from "../../shows/types.js";
+import TvShow from "../../shows/types.js";
 import Component from "../Component.js";
 
 import Show from "../Show/Show.js";

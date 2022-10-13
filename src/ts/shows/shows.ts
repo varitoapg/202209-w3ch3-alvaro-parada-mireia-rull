@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/consistent-type-imports */
-import TvShow from "./types.js";
+import TvShowStructure from "./types.js";
 
-const shows: TvShow[] = [
+const shows: TvShowStructure[] = [
   {
     id: 1,
     name: "The Sopranos",
