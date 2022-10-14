@@ -30,7 +30,7 @@ const shows: TvShowStructure[] = [
     year: 2007,
     poster: "https://es.web.img3.acsta.net/pictures/21/02/10/20/02/0834301.jpg",
     watched: true,
-    score: 5,
+    score: 3,
     emmies: 116,
   },
   {
@@ -40,7 +40,7 @@ const shows: TvShowStructure[] = [
     year: 2001,
     poster: "https://www.cine.com/media/series/2711.jpg",
     watched: true,
-    score: 5,
+    score: 4,
     emmies: 53,
   },
   {
@@ -50,7 +50,7 @@ const shows: TvShowStructure[] = [
     year: 2017,
     poster: "https://www.cine.com/media/series/2711.jpg",
     watched: false,
-    score: 0,
+    score: 2,
     emmies: 0,
   },
 ];
