@@ -13,6 +13,7 @@ describe("Given a SeriesList component", () => {
 
       expect(expectedHeaderTwo).not.toBeNull();
       expect(expectedSection).not.toBeNull();
+      expect(expectedHeaderTwo.textContent).toBe(title);
     });
   });
 });
